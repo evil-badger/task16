@@ -63,10 +63,10 @@ const products = {
 let targetDiv = document.querySelector(".content");
 let goodsItemInfo = document.querySelector(".goodItemInfo");
 
-let popupBg = document.querySelector('.popup__bg'); // Фон попап окна
-let popup = document.querySelector('.popup'); // Само окно
-let openPopupButtons = document.querySelectorAll('.open-popup'); // Кнопки для показа окна
-let closePopupButton = document.querySelector('.close-popup'); // Кнопка для скрытия окна
+let popupBg = document.querySelector('.popup__bg'); 
+let popup = document.querySelector('.popup'); 
+let openPopupButtons = document.querySelectorAll('.open-popup'); 
+let closePopupButton = document.querySelector('.close-popup'); 
 
 function addDivNotes() {
     targetDiv.innerHTML = "";
@@ -86,12 +86,12 @@ function addDivNotes() {
             goodsItemInfo.append(span);
             goodsItemInfo.append(button);
             button.addEventListener('click', function onClick(event) {
-                event.preventDefault(); // Предотвращаем дефолтное поведение браузера
-                popupBg.classList.add('active'); // Добавляем класс 'active' для фона
-                popup.classList.add('active'); // И для самого окна
-                closePopupButton.addEventListener('click', () => { // Вешаем обработчик на крестик
-                    popupBg.classList.remove('active'); // Убираем активный класс с фона
-                    popup.classList.remove('active'); // И с окна
+                event.preventDefault(); 
+                popupBg.classList.add('active'); 
+                popup.classList.add('active'); 
+                closePopupButton.addEventListener('click', () => { 
+                    popupBg.classList.remove('active'); 
+                    popup.classList.remove('active'); 
                     goodsItemInfo.innerHTML = "";
                     let content = document.querySelector(".content");
                     content.innerHTML = "";
@@ -119,12 +119,12 @@ function addDivSmart() {
             goodsItemInfo.append(span);
             goodsItemInfo.append(button);
             button.addEventListener('click', function onClick(event) {
-                event.preventDefault(); // Предотвращаем дефолтное поведение браузера
-                popupBg.classList.add('active'); // Добавляем класс 'active' для фона
-                popup.classList.add('active'); // И для самого окна
-                closePopupButton.addEventListener('click', () => { // Вешаем обработчик на крестик
-                    popupBg.classList.remove('active'); // Убираем активный класс с фона
-                    popup.classList.remove('active'); // И с окна
+                event.preventDefault(); 
+                popupBg.classList.add('active'); 
+                popup.classList.add('active'); 
+                closePopupButton.addEventListener('click', () => { 
+                    popupBg.classList.remove('active'); 
+                    popup.classList.remove('active'); 
                     goodsItemInfo.innerHTML = "";
                     let content = document.querySelector(".content");
                     content.innerHTML = "";
@@ -152,12 +152,12 @@ function addDivFridge() {
             goodsItemInfo.append(span);
             goodsItemInfo.append(button);
             button.addEventListener('click', function onClick(event) {
-                event.preventDefault(); // Предотвращаем дефолтное поведение браузера
-                popupBg.classList.add('active'); // Добавляем класс 'active' для фона
-                popup.classList.add('active'); // И для самого окна
-                closePopupButton.addEventListener('click', () => { // Вешаем обработчик на крестик
-                    popupBg.classList.remove('active'); // Убираем активный класс с фона
-                    popup.classList.remove('active'); // И с окна
+                event.preventDefault(); 
+                popupBg.classList.add('active'); 
+                popup.classList.add('active'); 
+                closePopupButton.addEventListener('click', () => { 
+                    popupBg.classList.remove('active'); 
+                    popup.classList.remove('active'); 
                     goodsItemInfo.innerHTML = "";
                     let content = document.querySelector(".content");
                     content.innerHTML = "";
