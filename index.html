@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="header">
+            <div class="categories backgroundBlue">
+                <span>Категории</span>
+                <ul class="categoriesList">
+                    <li class="item" onclick="addDivNotes()">Ноутбуки</li>
+                    <li class="item" onclick="addDivSmart()">Смартфоны</li>
+                    <li class="item" onclick="addDivFridge()">Холодильники</li>
+                </ul>
+            </div>
+
+            <div class="goodsList backgroundBlue">
+                <span>Перечень продуктов категорий</span>
+                <div class="content"></div>
+            </div>
+
+            <div class="goodsItem backgroundBlue">
+                <span class="">Информация о продукте</span>
+                <div class="goodItemInfo"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="popup__bg">
+        <form class="popup">
+            <svg class="close-popup" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <path fill="#2982ff"
+                    d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z" />
+            </svg>
+            <label>
+                <div class="label__text">
+                    Выбранная позиция успешно приобретена
+                </div>
+                <div class="label__text2">
+                    Мы верим, что вещи существуют для того, чтобы делать жизнь проще, приятнее и добрее.
+                    Поэтому и поиск той самой вещи должен быть быстрым, удобным и приятным.
+                    Мы не просто продаем бытовую технику, электронику, украшения или вино.
+                    Мы помогаем найти именно то, что нужно, в одном месте и без лишних
+                    волнений, чтобы вы не тратили жизнь на поиски, а просто жили счастливо.
+                </div>
+            </label>
+        </form>
+    </div>
+
+    <script type="text/javascript" src="./script.js"></script>
+</body>
+
+</html>
