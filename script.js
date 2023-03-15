@@ -1,10 +1,3 @@
-{/* <li class="item" onclick="addDivNotes()">Ноутбуки</li>
-<li class="item" onclick="addDivSmart()">Смартфоны</li>
-<li class="item" onclick="addDivFridge()">Холодильники</li>
-<li class="item" onclick="addDivG()">Куртки</li>
-<li class="item" onclick="addDivSmart()">Шорты</li>
-<li class="item" onclick="addDivSmart()">Обувь</li> */}
-
 const products = {
     notebooks: [
         {
@@ -63,109 +56,47 @@ const products = {
 let targetDiv = document.querySelector(".content");
 let goodsItemInfo = document.querySelector(".goodItemInfo");
 
-let popupBg = document.querySelector('.popup__bg'); 
-let popup = document.querySelector('.popup'); 
-let openPopupButtons = document.querySelectorAll('.open-popup'); 
-let closePopupButton = document.querySelector('.close-popup'); 
+let popupBg = document.querySelector('.popup__bg');
+let popup = document.querySelector('.popup');
+let openPopupButtons = document.querySelectorAll('.open-popup');
+let closePopupButton = document.querySelector('.close-popup');
 
-function addDivNotes() {
-    targetDiv.innerHTML = "";
-    for (let value of products.notebooks) {
-        console.log(value.name);
-        let childDiv = document.createElement('div');
-        childDiv.className = "item";
-        childDiv.innerHTML = value.name;
-        targetDiv.append(childDiv);
-        childDiv.addEventListener('click', function onClick(event) {
-            let span = document.createElement('span');
-            let button = document.createElement('button');
-            button.className = "buy";
-            button.innerHTML = "купить";
-            span.innerHTML = `Стоимость: ${value.price}`;
-            goodsItemInfo.innerHTML = `${value.description}`;
-            goodsItemInfo.append(span);
-            goodsItemInfo.append(button);
-            button.addEventListener('click', function onClick(event) {
-                event.preventDefault(); 
-                popupBg.classList.add('active'); 
-                popup.classList.add('active'); 
-                closePopupButton.addEventListener('click', () => { 
-                    popupBg.classList.remove('active'); 
-                    popup.classList.remove('active'); 
-                    goodsItemInfo.innerHTML = "";
-                    let content = document.querySelector(".content");
-                    content.innerHTML = "";
+function addDivContent(inputValue) {
+    for (let key in products) {
+        if (key == inputValue) {
+            console.log(key);
+            console.log(products[key]);
+            targetDiv.innerHTML = "";
+            for (let value of products[key]) {
+                console.log(value.name);
+                let childDiv = document.createElement('div');
+                childDiv.className = "item";
+                childDiv.innerHTML = value.name;
+                targetDiv.append(childDiv);
+                childDiv.addEventListener('click', function onClick(event) {
+                    let span = document.createElement('span');
+                    let button = document.createElement('button');
+                    button.className = "buy";
+                    button.innerHTML = "купить";
+                    span.innerHTML = `Стоимость: ${value.price}`;
+                    goodsItemInfo.innerHTML = `${value.description}`;
+                    goodsItemInfo.append(span);
+                    goodsItemInfo.append(button);
+                    button.addEventListener('click', function onClick(event) {
+                        event.preventDefault();
+                        popupBg.classList.add('active');
+                        popup.classList.add('active');
+                        closePopupButton.addEventListener('click', () => {
+                            popupBg.classList.remove('active');
+                            popup.classList.remove('active');
+                            goodsItemInfo.innerHTML = "";
+                            let content = document.querySelector(".content");
+                            content.innerHTML = "";
+                        });
+                    })
                 });
-            })
-        });
+            }
+        }
     }
 }
-
-function addDivSmart() {
-    targetDiv.innerHTML = "";
-    for (let value of products.smartphones) {
-        console.log(value.name);
-        let childDiv = document.createElement('div');
-        childDiv.className = "item";
-        childDiv.innerHTML = value.name;
-        targetDiv.append(childDiv);
-        childDiv.addEventListener('click', function onClick(event) {
-            let span = document.createElement('span');
-            let button = document.createElement('button');
-            button.className = "buy";
-            button.innerHTML = "купить";
-            span.innerHTML = `Стоимость: ${value.price}`;
-            goodsItemInfo.innerHTML = `${value.description}`;
-            goodsItemInfo.append(span);
-            goodsItemInfo.append(button);
-            button.addEventListener('click', function onClick(event) {
-                event.preventDefault(); 
-                popupBg.classList.add('active'); 
-                popup.classList.add('active'); 
-                closePopupButton.addEventListener('click', () => { 
-                    popupBg.classList.remove('active'); 
-                    popup.classList.remove('active'); 
-                    goodsItemInfo.innerHTML = "";
-                    let content = document.querySelector(".content");
-                    content.innerHTML = "";
-                });
-            })
-        });
-    }
-}
-
-function addDivFridge() {
-    targetDiv.innerHTML = "";
-    for (let value of products.fridges) {
-        console.log(value.name);
-        let childDiv = document.createElement('div');
-        childDiv.className = "item";
-        childDiv.innerHTML = value.name;
-        targetDiv.append(childDiv);
-        childDiv.addEventListener('click', function onClick(event) {
-            let span = document.createElement('span');
-            let button = document.createElement('button');
-            button.className = "buy";
-            button.innerHTML = "купить";
-            span.innerHTML = `Стоимость: ${value.price}`;
-            goodsItemInfo.innerHTML = `${value.description}`;
-            goodsItemInfo.append(span);
-            goodsItemInfo.append(button);
-            button.addEventListener('click', function onClick(event) {
-                event.preventDefault(); 
-                popupBg.classList.add('active'); 
-                popup.classList.add('active'); 
-                closePopupButton.addEventListener('click', () => { 
-                    popupBg.classList.remove('active'); 
-                    popup.classList.remove('active'); 
-                    goodsItemInfo.innerHTML = "";
-                    let content = document.querySelector(".content");
-                    content.innerHTML = "";
-                });
-            })
-        });
-    }
-}
-
-
 
