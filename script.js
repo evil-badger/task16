@@ -100,3 +100,6 @@ function addDivContent(inputValue) {
     }
 }
 
+function prepareToWork(){
+    console.log("prepairing to the new feature");
+}
