@@ -53,53 +53,49 @@ const products = {
     ],
 }
 
-let targetDiv = document.querySelector(".content");
-let goodsItemInfo = document.querySelector(".goodItemInfo");
-
+let productListContainer = document.querySelector(".content");
+let productListItemInfo = document.querySelector(".goodItemInfo");
 let popupBg = document.querySelector('.popup__bg');
 let popup = document.querySelector('.popup');
 let openPopupButtons = document.querySelectorAll('.open-popup');
 let closePopupButton = document.querySelector('.close-popup');
 
 function addDivContent(inputValue) {
-    for (let key in products) {
-        if (key == inputValue) {
-            console.log(key);
-            console.log(products[key]);
-            targetDiv.innerHTML = "";
-            for (let value of products[key]) {
-                console.log(value.name);
-                let childDiv = document.createElement('div');
-                childDiv.className = "item";
-                childDiv.innerHTML = value.name;
-                targetDiv.append(childDiv);
-                childDiv.addEventListener('click', function onClick(event) {
-                    let span = document.createElement('span');
-                    let button = document.createElement('button');
-                    button.className = "buy";
-                    button.innerHTML = "купить";
-                    span.innerHTML = `Стоимость: ${value.price}`;
-                    goodsItemInfo.innerHTML = `${value.description}`;
-                    goodsItemInfo.append(span);
-                    goodsItemInfo.append(button);
-                    button.addEventListener('click', function onClick(event) {
-                        event.preventDefault();
-                        popupBg.classList.add('active');
-                        popup.classList.add('active');
-                        closePopupButton.addEventListener('click', () => {
-                            popupBg.classList.remove('active');
-                            popup.classList.remove('active');
-                            goodsItemInfo.innerHTML = "";
-                            let content = document.querySelector(".content");
-                            content.innerHTML = "";
-                        });
-                    })
-                });
+    for (let category in products) { 
+        //перебор обьекта products, ключи notebooks, smartphones,fridges
+        if (category == inputValue) {
+            productListContainer.innerHTML = "";
+            for (let productList of products[category]) { 
+                //перебирает массив объектов каждой категории
+                //products[category] - это массив notebooks
+                //notebooks[0,1,2] - это обьекты в массиве
+                //productList - это перебираемые обьекты, из них выбираем все что нужно для добавленния в div
+                let productListItem = document.createElement('div');
+                productListItem.className = "item";
+                productListItem.innerHTML = productList.name;
+                productListContainer.append(productListItem);
+                    productListItem.addEventListener('click', function onClick() {
+                        let itemPrice = document.createElement('span');
+                        let itemBuy = document.createElement('button');
+                        itemBuy.className = "buy";
+                        itemBuy.innerHTML = "купить";
+                        itemPrice.innerHTML = `Стоимость: ${productList.price}`;
+                        productListItemInfo.innerHTML = `${productList.description}`;
+                        productListItemInfo.append(itemPrice);
+                        productListItemInfo.append(itemBuy);
+                        itemBuy.addEventListener('click', function onClick() {
+                                popupBg.classList.add('active');
+                                popup.classList.add('active');
+                                    closePopupButton.addEventListener('click', () => {
+                                        popupBg.classList.remove('active');
+                                        popup.classList.remove('active');
+                                        productListItemInfo.innerHTML = "";
+                                        let content = document.querySelector(".content");
+                                        content.innerHTML = "";
+                                    });
+                            })
+                    });
             }
         }
     }
-}
-
-function prepareToWork(){
-    console.log("prepairing to the new feature");
 }
