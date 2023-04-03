@@ -231,15 +231,17 @@ button.addEventListener('click', (event) => {
     })
 
 
-     inputs.forEach(function (value, index) {
-      value.isValidLength = validateArrLength[index];
-      value.isValidValue = validateArrValue[index];
-      if(value.isValidValue==false){
+     inputs.forEach(function (element, index) {
+      element.isValidLength = validateArrLength[index];
+      element.isValidValue = validateArrValue[index];
+      element.isValid=validateArr[index];
+
+      if(element.isValidValue==false){
         inputs[index].inputEl.className = "red";
         inputs[index].inputEl.value="";
         inputs[index].inputEl.placeholder="Пустое значение";
       }
-      else if(value.isValidLength==false){
+      else if(element.isValidLength==false){
         inputs[index].inputEl.className = "red";
         inputs[index].inputEl.value="";
         inputs[index].inputEl.placeholder="Мало символов"
@@ -248,6 +250,7 @@ button.addEventListener('click', (event) => {
           inputs[index].inputEl.className = "green";
       }
      })
+     console.log(inputs);
   }
 })
 

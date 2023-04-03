@@ -366,3 +366,7 @@ input::placeholder {
 	
 	border: 2px solid green;
 }
+
+.error{
+	display: none;
+}
