@@ -6,6 +6,21 @@
 	max-height: 800px;
 }
 
+.feedback {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding-top: 10px;
+	max-height: 800px;
+	max-width: 600px;
+	margin: 20px auto 0 auto;
+	border-radius: 10px;
+	background-color: rgb(130, 193, 238);
+	gap: 20px;
+	padding-bottom: 10px;
+}
+
 .header {
 	display: flex;
 	gap: 20px;
@@ -237,7 +252,7 @@ table {
 	left: 50%;
 	transform: translate(-50%, -50%) scale(0);
 	background: #fff;
-	width: 400px;
+	width: 500px;
 	padding: 25px;
 	transition: 0.5s all;
 }
@@ -262,4 +277,92 @@ table {
 	font-weight: 400;
 	color: black;
 	margin: 10px 0;
+}
+
+
+.form {
+	display: flex;
+	flex-direction: column;
+	max-width: 350px;
+	background-color: bisque;
+	padding: 10px 10px;
+}
+
+label span {
+	display: block;
+}
+
+label {
+	margin-bottom: 10px;
+}
+
+input {
+	margin-top: 10px;
+	display: block;
+}
+
+.row {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+#counter {
+	display: inline;
+	margin: 10px;
+}
+
+.rowCounter {
+	display: flex;
+	flex-direction: row;
+	justify-content: start;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 10px;
+	align-items: flex-start;
+	gap: 10px;
+}
+
+.labelInput {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start
+}
+
+.inputForm {
+	border: 1px solid black;
+	align-self: start;
+}
+
+select {
+	margin-top: 5px;
+	border: 1px solid black;
+}
+
+.commentInput {
+	margin-top: 5px;
+	border: 1px solid black;
+}
+
+.submitButton {
+	width: 150px;
+}
+
+input::placeholder {
+	color: rgb(168, 155, 155);
+	font-size: 1.1em;
+	font-style: italic;
+}
+
+.red{
+	
+	border: 2px solid red;
+}
+
+.green{
+	
+	border: 2px solid green;
 }

@@ -2,61 +2,112 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./style.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./style.css">
 
 </head>
 
 <body>
-    <div class="wrap">
-        <div class="header">
-            <div class="categories backgroundBlue">
-                <span>Категории</span>
-                <ul class="categoriesList">
-                    <li class="item" onclick="addDivContent('notebooks')">Ноутбуки</li>
-                    <li class="item" onclick="addDivContent('smartphones')">Смартфоны</li>
-                    <li class="item" onclick="addDivContent('fridges')">Холодильники</li>         
-                </ul>
-            </div>
+  <div class="wrap">
+    <div class="header">
+      <div class="categories backgroundBlue">
+        <span>Категории</span>
+        <ul class="categoriesList">
+          <li class="item" onclick="addDivContent('notebooks')">Ноутбуки</li>
+          <li class="item" onclick="addDivContent('smartphones')">Смартфоны</li>
+          <li class="item" onclick="addDivContent('fridges')">Холодильники</li>
+        </ul>
+      </div>
 
-            <div class="goodsList backgroundBlue">
-                <span>Перечень продуктов категорий</span>
-                <div class="content"></div>
-            </div>
+      <div class="goodsList backgroundBlue">
+        <span>Перечень продуктов категорий</span>
+        <div class="content"></div>
+      </div>
 
-            <div class="goodsItem backgroundBlue">
-                <span class="">Информация о продукте</span>
-                <div class="goodItemInfo"></div>
-            </div>
+      <div class="goodsItem backgroundBlue">
+        <span class="">Информация о продукте</span>
+        <div class="goodItemInfo"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="popup__bg">
+
+    <form class="form popup" id="regForm">
+      <svg class="close-popup" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+        <path fill="#2982ff"
+          d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z" />
+      </svg>
+     
+      <label class="labelInput">
+        <span>Имя</span>
+        <input placeholder="Михаил" type="text" class="inputForm" name="firstname">
+      </label>
+
+      <label class="labelInput">
+        <span>Отчество</span>
+        <input placeholder="Петрович" type="text" class="inputForm" name="lastname">
+      </label>
+
+      <label class="labelInput">
+        <span>Фамилия</span>
+        <input placeholder="Зубенко" type="text" class="inputForm" name="surname">
+      </label>
+
+      <label class="labelInput">
+        <span>Город</span>
+        <select id="selectCity">
+          <option>Одесса</option>
+          <option>Киев</option>
+          <option>Львов</option>
+          <option>Ужгород</option>
+        </select>
+      </label>
+
+      <label class="labelInput">
+        <span>Склад новой почты</span>
+        <select id="selectDelivery">
+          <option>Центральный</option>
+          <option>Набережный</option>
+          <option>Промышленный</option>
+          <option>Пригородный</option>
+        </select>
+      </label>
+
+      <label class="labelInput">
+        <span>Способ оплаты</span>
+        <select id="selectPayment">
+          <option>При получении</option>
+          <option>Банковской картой</option>
+        </select>
+      </label>
+
+      <label class="labelInput">
+        <span>Комментарий к заказу</span>
+        <textarea placeholder="Если есть доп. пожелания к заказу, пишите сюда" name="comment" class="commentInput"
+          id="comment" cols="30" rows="10"></textarea>
+      </label>
+
+      <div class="container">
+        <span>Сколько единиц</span>
+        <div>
+          <button id="decrement">-</button>
+          <p id="counter">0</p>
+          <button id="increment">+</button>
         </div>
+      </div>
 
-    </div>
+      <button type="submit" class="submitButton" id="submit">Отправить запрос</button>
 
-    <div class="popup__bg">
-        <form class="popup">
-            <svg class="close-popup" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                <path fill="#2982ff"
-                    d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z" />
-            </svg>
-            <label>
-                <div class="label__text">
-                    Выбранная позиция успешно приобретена
-                </div>
-                <div class="label__text2">
-                    Мы верим, что вещи существуют для того, чтобы делать жизнь проще, приятнее и добрее.
-                    Поэтому и поиск той самой вещи должен быть быстрым, удобным и приятным.
-                    Мы не просто продаем бытовую технику, электронику, украшения или вино.
-                    Мы помогаем найти именно то, что нужно, в одном месте и без лишних
-                    волнений, чтобы вы не тратили жизнь на поиски, а просто жили счастливо.
-                </div>
-            </label>
-        </form>
-    </div>
+    </form>
+  </div>
+  <div class="feedback"></div>
 
-    <script type="text/javascript" src="./script.js"></script>
+  <script type="text/javascript" src="./script.js"></script>
 </body>
 
 </html>
