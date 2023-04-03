@@ -95,6 +95,11 @@ function addDivContent(inputValue) {
           console.log(productList.price);
           console.log(productList.description);
           itemBuy.addEventListener('click', function onClick() {
+
+           inputs.forEach(function(element, index, arr) {
+              inputs[index].inputEl.value="";
+            });
+
             popupBg.classList.add('active');
             popup.classList.add('active');
             closePopupButton.addEventListener('click', () => {
@@ -181,12 +186,12 @@ form.addEventListener('click', (e) => {
   e.preventDefault();
 })
 
+
 button.addEventListener('click', (event) => {
   event.preventDefault();
   divFeedback.innerHTML = "";
 
   const validateArr = inputs.map((el) => {
-
     const isAllValid = el.validationRules.map(func => {
       return func(el.inputEl.value, el.maxLengthValue);
     })
@@ -209,6 +214,7 @@ button.addEventListener('click', (event) => {
     sendData(data);
   }
   else {
+  
     const validateArrLength = inputs.map((el) => {
       const isAllValid2 = el.validationRules.map(func => {
         return func(el.inputEl.value, el.maxLengthValue);
